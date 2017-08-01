@@ -1,0 +1,9 @@
+<div class="autentification-modal modal">
+    <div class="modal__contents modal--transition">
+        <h2 class="modal-title">Log in</h2>
+        <input type="text" class="modal-input" placeholder="Your name" [(ngModel)]="userName">
+        <input type="password" class="modal-input"  placeholder="Your password"
+               [(ngModel)]="userPassword">
+        <button class="form-submit-btn" (click)="formSubmit(userName,userPassword)">Submit</button>
+    </div>
+</div>

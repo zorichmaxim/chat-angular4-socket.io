@@ -1,0 +1,51 @@
+<ol class="chat">
+    <li class="other">
+        <div class="avatar"><img src="https://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+        <div class="msg">
+            <p class="msg-name msg-name-left">Ben</p>
+            <p>Pásamelo!
+                <!--  <emoji class="please"/> -->
+            </p>
+            <time>20:18</time>
+        </div>
+    </li>
+    <li class="self">
+        <div class="avatar"><img src="https://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+        <div class="msg">
+            <p class="msg-name msg-name-right">Martin</p>
+            <img src="https://i.imgur.com/QAROObc.jpg" draggable="false"/>
+            <time>20:19</time>
+        </div>
+    </li>
+    <li class="other">
+        <div class="avatar"><img src="https://i.imgur.com/DY6gND0.png" draggable="false"/></div>
+        <div class="msg">
+            <p class="msg-name msg-name-left">Ben</p>
+            <p>Gracias!
+                <!--   <emoji class="hearth_blue"/> -->
+            </p>
+            <time>20:20</time>
+        </div>
+    </li>
+    <div class="day">Hoy</div>
+    <li class="self">
+        <div class="avatar"><img src="https://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+        <div class="msg">
+            <p class="msg-name">Martin</p>
+            <p>Te apetece jugar a Minecraft?</p>
+            <time>18:03</time>
+        </div>
+    </li>
+    <li class="self" *ngFor="let userMsg of userMessageList">
+        <div class="avatar"><img src="https://i.imgur.com/HYcn9xO.png" draggable="false"/></div>
+        <div class="msg">
+            <p class="msg-name">{{userMsg.name}}</p>
+            <p>{{userMsg.message}}</p>
+            <time>18:03</time>
+        </div>
+    </li>
+</ol>
+<input class="textarea" type="text" id="m" autocomplete="off" placeholder="Type here!" [(ngModel)]="message"/>
+<div class="emojis" id="submit-btn" (click)="sendNewMessage(message)"></div>
+
+

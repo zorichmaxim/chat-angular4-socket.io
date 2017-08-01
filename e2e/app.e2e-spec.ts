@@ -1,6 +1,6 @@
 import { ChatSocketPage } from './app.po';
 
-describe('chat-socket App', () => {
+describe('chat-component-socket App', () => {
   let page: ChatSocketPage;
 
   beforeEach(() => {
