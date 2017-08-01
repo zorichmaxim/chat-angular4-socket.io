@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {ChatService} from 'app/chat-service/chat.service';
+import {ChatService} from '../chat-services/chat.service';
 import {Socket} from 'ng-socket-io';
-import {AuthenticationDataService} from 'app/chat-service/authentication-data-service';
+import {AuthenticationDataService} from '../chat-services/authentication-data-service';
 
 @Component({
     selector: 'app-chat',
