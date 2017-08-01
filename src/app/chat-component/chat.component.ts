@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {ChatService} from '../chat-services/chat.service';
-import {Socket} from 'ng-socket-io';
+import {Component, OnInit}         from '@angular/core';
+import {ChatService}               from '../chat-services/chat.service';
+import {Socket}                    from 'ng-socket-io';
 import {AuthenticationDataService} from '../chat-services/authentication-data-service';
 
 @Component({
@@ -34,7 +34,6 @@ export class ChatComponent implements OnInit {
 
     displayNewMessage(msg): void {
         this.userMessageList.push(msg);
-        this.clingToBottom();
     }
 
     sendNewMessage(message) {
@@ -44,6 +43,7 @@ export class ChatComponent implements OnInit {
         };
         message !== '' ? this.chatService.msgClient(userData) : false;
         this.message = '';
+        this.clingToBottom();
     }
 
     handleEnterEvent(event) {

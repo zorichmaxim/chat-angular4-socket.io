@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import 'rxjs/add/operator/map';
-import {Socket} from 'ng-socket-io';
+import {Socket}     from 'ng-socket-io';
 
 @Injectable()
 export class ChatService {

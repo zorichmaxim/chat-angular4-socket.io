@@ -1,6 +1,6 @@
-import {Routes, RouterModule} from '@angular/router';
+import {Routes, RouterModule}    from '@angular/router';
 import {AuthenticationComponent} from 'app/authentication/authentication.component';
-import {ChatComponent} from 'app/chat-component/chat.component';
+import {ChatComponent}           from 'app/chat-component/chat.component';
 
 const routes: Routes = [
     {path: '', redirectTo: 'login', pathMatch: "full"},

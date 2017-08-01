@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {ChatService} from '../chat-services/chat.service';
-import {Socket} from 'ng-socket-io';
-import {Router} from '@angular/router';
-import {AuthenticationDataService} from '../chat-services/authentication-data-service';
+import {Component, OnInit}          from '@angular/core';
+import {ChatService}                from '../chat-services/chat.service';
+import {Socket}                     from 'ng-socket-io';
+import {Router}                     from '@angular/router';
+import {AuthenticationDataService}  from '../chat-services/authentication-data-service';
 
 @Component({
     selector: 'app-authentication',
