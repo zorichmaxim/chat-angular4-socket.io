@@ -5,11 +5,10 @@ const
     io = require('socket.io')(http),
     path = require('path'),
     MongoClient = require('mongodb').MongoClient,
-    url = "mongodb://zorich_maxim:maxim1101993@ds115573.mlab.com:15573/users-messgaes-db";
+    url = "mongodb://zorich_maxim:maxim1101993@ds115573.mlab.com:15573/users-messgaes-db",
+    port = process.env.PORT || 4200;
 
-let port = process.env.PORT || 4200;
-
-const loadFullData = (user) => {
+const loadFullData = user => {
     MongoClient.connect(url, (err, db) => {
         db.collection("users").find().toArray((err, results) => {
             let result = {
@@ -20,14 +19,14 @@ const loadFullData = (user) => {
         });
     });
 };
-const authenticationFunc = (user) => {
+const authenticationFunc = user => {
     MongoClient.connect(url, (err, db) => {
         db.collection("users").find({name: user}).toArray((err, results) => {
             results.length === 0 ? loadFullData(user) : io.emit('name is busy');
         });
     });
 };
-const addUserData = (userData) => {
+const addUserData = userData => {
     MongoClient.connect(url, (err, db) => {
         db.collection("users").insertOne(userData, (err, results) => {
             db.close();
@@ -48,7 +47,7 @@ io.on('connection', socket => {
         authenticationFunc(user);
     });
 
-    socket.on('chat msg from client', (userData) => {
+    socket.on('chat msg from client', userData => {
         io.emit('chat message from io', userData);
         addUserData(userData);
     })

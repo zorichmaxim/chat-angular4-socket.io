@@ -27,7 +27,7 @@ export class AuthenticationComponent implements OnInit {
 
     formSubmit(name, password) {
         this.chatService.authentication(name);
-        this.socket.on('authentication done', (res) => {
+        this.socket.on('authentication done', res => {
             this.dataService.storageState = res.results;
             this.dataService.userAuthenticationName = res.user;
             this.router.navigate(['chat']);

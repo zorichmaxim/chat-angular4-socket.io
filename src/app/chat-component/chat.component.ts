@@ -16,6 +16,7 @@ export class ChatComponent implements OnInit {
     private userMessageList: Array<Object>;
     private userState; //умышленно, не пускает вебпак, посмотреть конфиги
     private message: string;
+
     constructor(private chatService: ChatService,
                 private socket: Socket,
                 private dataService: AuthenticationDataService) {
@@ -26,7 +27,7 @@ export class ChatComponent implements OnInit {
     ngOnInit() {
         this.userMessageList = this.dataService.storageState;
         this.userState.name = this.dataService.userAuthenticationName;
-        this.socket.on('chat message from io', (msg) => {
+        this.socket.on('chat message from io', msg => {
             this.displayNewMessage(msg);
         });
         this.clingToBottom();
@@ -52,7 +53,7 @@ export class ChatComponent implements OnInit {
         }
     }
 
-    clingToBottom(){
+    clingToBottom() {
         window.scrollTo(0, document.body.scrollHeight);
     }
 }
