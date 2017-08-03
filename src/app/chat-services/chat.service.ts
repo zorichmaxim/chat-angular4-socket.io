@@ -4,7 +4,6 @@ import {Socket}     from 'ng-socket-io';
 
 @Injectable()
 export class ChatService {
-
     constructor(private socket: Socket) {
     }
 
@@ -12,7 +11,8 @@ export class ChatService {
         this.socket.emit("chat msg from client", userData)
     }
 
-    authentication(name: string): void {
-        this.socket.emit('authentication', name);
+    authentication(name: any, password: any): void {
+        this.socket.emit('authentication', [name, password]);
     }
 }
+

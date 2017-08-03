@@ -26,11 +26,11 @@ export class AuthenticationComponent implements OnInit {
     }
 
     formSubmit(name, password) {
-        this.chatService.authentication(name);
+        this.chatService.authentication(name, password);
         this.socket.on('authentication done', res => {
             this.dataService.storageState = res.results;
             this.dataService.userAuthenticationName = res.user;
-            this.router.navigate(['chat']);
+            this.router.navigate([res.urlAccess]);
         });
 
         this.socket.on('name is busy', () => {
@@ -38,7 +38,7 @@ export class AuthenticationComponent implements OnInit {
         })
     }
 
-    handleEnterEvent(event) {
+    handleEnterEvent(event): void {
         if (event.keyCode === 13) {
             this.formSubmit(this.userName, this.userPassword);
         }

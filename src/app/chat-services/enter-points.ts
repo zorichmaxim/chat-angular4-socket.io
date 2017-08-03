@@ -3,18 +3,21 @@ import {Socket}     from 'ng2-socket-io';
 
 @Injectable()
 export class ChatSocket extends Socket {
-
     constructor() {
         super({url: 'http://localhost:4200/chat', options: {}});
     }
-
 }
 
 @Injectable()
 export class AuthenticationSocket extends Socket {
-
     constructor() {
         super({url: 'http://localhost:4200/login', options: {}});
     }
+}
 
+@Injectable()
+export class AdminSocket extends Socket {
+    constructor() {
+        super({url: 'http://localhost:4200/admin', options: {}});
+    }
 }

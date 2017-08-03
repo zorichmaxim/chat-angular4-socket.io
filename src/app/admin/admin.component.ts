@@ -4,14 +4,14 @@ import {Socket}                    from 'ng-socket-io';
 import {AuthenticationDataService} from '../chat-services/authentication-data-service';
 
 @Component({
-    selector: 'app-chat',
-    templateUrl: './chat.component.html',
-    styleUrls: ['./chat.component.css'],
+    selector: 'app-admin',
+    templateUrl: './admin.component.html',
+    styleUrls: ['./admin.component.css'],
     host: {
         '(document:keydown)': 'handleEnterEvent($event)'
     }
 })
-export class ChatComponent implements OnInit {
+export class AdminComponent implements OnInit {
 
     private userMessageList: Array<Object>;
     private userState; //умышленно, не пускает вебпак, посмотреть конфиги
